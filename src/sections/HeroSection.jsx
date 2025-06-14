@@ -1,12 +1,25 @@
 import FancyText from "../components/FancyText";
+import PhotoCard from "../components/PhotoCard";
+import '../styles/HeroSection.css';
 
-export default function HeroSection() {
+const HeroSection = () => {
   return (
-    <section style={{ minHeight: "100vh", display: "flex", alignItems: "center", padding: "2rem" }}>
-      <FancyText
-        text="You are the most beautiful part of my story"
-        highlightWords={["beautiful", "story"]}
-      />
+    <section className="hero-section">
+      <div className="hero-text">
+        <FancyText 
+          text="Every moment with you feels like a dream." 
+          highlightWords={["moment", "dream"]} 
+        />
+      </div>
+
+      <div className="hero-photo">
+        <PhotoCard 
+          image="/images/image1.jpeg" 
+          caption="Captured in my heart forever." 
+        />
+      </div>
     </section>
   );
-}
+};
+
+export default HeroSection;
