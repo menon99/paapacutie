@@ -1,22 +1,16 @@
 import FancyText from "../components/FancyText";
 import PhotoCard from "../components/PhotoCard";
-import '../styles/HeroSection.css';
+import '../styles/HeroSection.css'; // Assuming you have a CSS file for styling
 
-const HeroSection = () => {
+const HeroSection = ({ background, text, highlightWords, image, caption }) => {
   return (
-    <section className="hero-section">
+    <section className="hero-section" style={{ background }}>
       <div className="hero-text">
-        <FancyText 
-          text="Every moment with you feels like a dream." 
-          highlightWords={["moment", "dream"]} 
-        />
+        <FancyText text={text} highlightWords={highlightWords} />
       </div>
 
       <div className="hero-photo">
-        <PhotoCard 
-          image="/images/image1.jpeg" 
-          caption="Captured in my heart forever." 
-        />
+        <PhotoCard image={image} caption={caption} />
       </div>
     </section>
   );
