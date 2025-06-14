@@ -1,7 +1,7 @@
+import HeroSection from "./sections/HeroSection";
+
 function App() {
-  return (
-    <p>Hello World</p>
-  )
+  return <HeroSection />;
 }
 
-export default App
+export default App;

@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0a0a0a; /* Deep dark for dreamy aesthetic */
+  color: var(--text-color);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* === ROOT VARIABLES === */
+:root {
+  --highlight-gradient: linear-gradient(90deg, #ff8ae2, #8aa7ff);
+  --glass-bg: rgba(255, 255, 255, 0.08);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --text-color: #ffffff;
+  --accent-color: #ff8ae2;
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Poppins', sans-serif;
+}
+
+/* === BASE ELEMENTS === */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: inherit;
+}
+
+/* === OPTIONAL SCROLLBAR STYLING === */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 3px;
+}
