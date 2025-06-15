@@ -61,6 +61,13 @@ const PhotoCarousel = () => {
             animate="center"
             exit="exit"
             transition={{ duration: 0.6, ease: "easeInOut" }}
+            drag="x"
+            dragConstraints={{ left: 0, right: 0 }}
+            dragElastic={0.2}
+            onDragEnd={(e, { offset }) => {
+              if (offset.x > 100) paginate(-1);
+              else if (offset.x < -100) paginate(1);
+            }}
           >
             <PhotoCard
               image={photos[index].image}

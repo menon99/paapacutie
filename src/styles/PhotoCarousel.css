@@ -47,3 +47,9 @@
 .arrow.right {
   transform: rotate(45deg);
 }
+
+@media (max-width: 768px) {
+  .carousel-controls {
+    display: none;
+  }
+}
