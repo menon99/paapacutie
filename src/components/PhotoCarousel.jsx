@@ -4,69 +4,77 @@ import PhotoCard from "./PhotoCard";
 import "../styles/PhotoCarousel.css";
 
 const photos = [
-  {
-    image: "/images/image1.jpeg",
-    caption: "Caption 1",
-  },
-  {
-    image: "/images/image1.jpeg",
-    caption: "Caption 2",
-  },
-  {
-    image: "/images/image1.jpeg",
-    caption: "Caption 3",
-  },
+  { image: "/images/image1.jpeg", caption: "A dreamy moment together" },
+  { image: "/images/image2.jpeg", caption: "Laughs under the stars" },
+  { image: "/images/image1.jpeg", caption: "Wanderlust adventures" },
+  { image: "/images/image2.jpeg", caption: "Smiles worth a thousand sunsets" },
 ];
 
 const PhotoCarousel = () => {
-  const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(0);
+  const [[index, direction], setIndex] = useState([0, 0]);
 
   const paginate = (newDirection) => {
-    setDirection(newDirection);
-    setIndex((prev) => (prev + newDirection + photos.length) % photos.length);
+    setIndex(([prevIndex]) => {
+      const newIndex =
+        (prevIndex + newDirection + photos.length) % photos.length;
+      return [newIndex, newDirection];
+    });
   };
 
   const variants = {
     enter: (dir) => ({
-      x: dir > 0 ? 300 : -300,
+      x: dir > 0 ? 500 : -500,
       opacity: 0,
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
     }),
     center: {
       x: 0,
       opacity: 1,
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
     },
     exit: (dir) => ({
-      x: dir > 0 ? -300 : 300,
+      x: dir > 0 ? -500 : 500,
       opacity: 0,
+      position: "absolute",
+      top: 0,
+      left: 0,
+      right: 0,
     }),
   };
 
   return (
     <div className="carousel-container">
-      <AnimatePresence initial={false} custom={direction}>
-        <motion.div
-          key={photos[index].image}
-          className="carousel-slide"
-          custom={direction}
-          variants={variants}
-          initial="enter"
-          animate="center"
-          exit="exit"
-          transition={{ duration: 0.6, ease: "easeInOut" }}
-        >
-          <PhotoCard
-            image={photos[index].image}
-            caption={photos[index].caption}
-          />
-        </motion.div>
-      </AnimatePresence>
+      <div className="carousel-slide">
+        <AnimatePresence initial={false} custom={direction} mode="wait">
+          <motion.div
+            key={photos[index].image}
+            className="carousel-animated-card"
+            custom={direction}
+            variants={variants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: 0.6, ease: "easeInOut" }}
+          >
+            <PhotoCard
+              image={photos[index].image}
+              caption={photos[index].caption}
+            />
+          </motion.div>
+        </AnimatePresence>
+      </div>
 
       <div className="carousel-controls">
-        <button className="carousel-btn" onClick={() => paginate(-1)}>
+        <button className="carousel-button" onClick={() => paginate(-1)}>
           <div className="arrow left" />
         </button>
-        <button className="carousel-btn" onClick={() => paginate(1)}>
+        <button className="carousel-button" onClick={() => paginate(1)}>
           <div className="arrow right" />
         </button>
       </div>
