@@ -85,6 +85,16 @@ const PhotoCarousel = () => {
           <div className="arrow right" />
         </button>
       </div>
+
+      {/* Dots only for mobile */}
+      <div className="carousel-dots">
+        {photos.map((_, i) => (
+          <span
+            key={i}
+            className={`carousel-dot ${i === index ? "active" : ""}`}
+          />
+        ))}
+      </div>
     </div>
   );
 };
