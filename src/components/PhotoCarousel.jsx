@@ -23,7 +23,7 @@ const PhotoCarousel = () => {
 
   const variants = {
     enter: (dir) => ({
-      x: dir > 0 ? 500 : -500,
+      x: dir > 0 ? 300 : -300,
       opacity: 0,
       position: "absolute",
       top: 0,
@@ -39,7 +39,7 @@ const PhotoCarousel = () => {
       right: 0,
     },
     exit: (dir) => ({
-      x: dir > 0 ? -500 : 500,
+      x: dir > 0 ? -300 : 300,
       opacity: 0,
       position: "absolute",
       top: 0,
@@ -60,13 +60,13 @@ const PhotoCarousel = () => {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: 0.6, ease: "easeInOut" }}
+            transition={{ duration: 0.5, ease: "easeInOut" }}
             drag="x"
             dragConstraints={{ left: 0, right: 0 }}
-            dragElastic={0.2}
+            dragElastic={0.5} // smoother, more elastic
             onDragEnd={(e, { offset }) => {
-              if (offset.x > 100) paginate(-1);
-              else if (offset.x < -100) paginate(1);
+              if (offset.x > 50) paginate(-1);     // reduced from 100 → more sensitive
+              else if (offset.x < -50) paginate(1);
             }}
           >
             <PhotoCard
@@ -86,7 +86,6 @@ const PhotoCarousel = () => {
         </button>
       </div>
 
-      {/* Dots only for mobile */}
       <div className="carousel-dots">
         {photos.map((_, i) => (
           <span
