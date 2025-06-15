@@ -4,10 +4,10 @@ import PhotoCard from "./PhotoCard";
 import "../styles/PhotoCarousel.css";
 
 const photos = [
-  { image: "/images/image1.jpeg", caption: "A dreamy moment together" },
-  { image: "/images/image2.jpeg", caption: "Laughs under the stars" },
-  { image: "/images/image1.jpeg", caption: "Wanderlust adventures" },
-  { image: "/images/image2.jpeg", caption: "Smiles worth a thousand sunsets" },
+  { image: "/images/image1.jpeg", caption: "Azhagu Devathai" },
+  { image: "/images/image3.jpeg", caption: "Love panlama venama?" },
+  { image: "/images/image2.jpeg", caption: "Enai aalum kadhal desam" },
+  { image: "/images/image4.jpeg", caption: "Enna ipdi paakadhe Jessy" },
 ];
 
 const PhotoCarousel = () => {

@@ -10,8 +10,8 @@ const AnimatedBackground = () => {
       <div className="content-wrapper">
         <div className="text-container">
           <FancyText
-            text="This is to certify that Ridhi is the cutest girl in the universe"
-            highlightWords={["Ridhi", "cutest", "universe"]}
+            text="This is to certify that Ridhi is the Cutest girl in the Universe"
+            highlightWords={["Ridhi", "Cutest", "Universe"]}
           />
         </div>
         <div className="carousel">
