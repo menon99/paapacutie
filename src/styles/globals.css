@@ -18,7 +18,7 @@ html, body {
 
 /* === ROOT VARIABLES === */
 :root {
-  --highlight-gradient: linear-gradient(90deg, #ff8ae2, #8aa7ff);
+  --highlight-gradient: linear-gradient(90deg, #b5c99a, #8aa36b);
   --glass-bg: rgba(255, 255, 255, 0.08);
   --glass-border: rgba(255, 255, 255, 0.2);
   --text-color: #ffffff;
