@@ -1,38 +1,51 @@
+:root {
+  --olive-dark: #3B4A3E;
+  --olive-light: #A3B18A;
+}
+
 .shapes-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--olive-dark);
+  z-index: 0;
+  overflow: hidden;
+}
+
+/* NEW inner wrapper to center the shapes group */
+.shapes-inner {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;   /* restrict width to visualize better */
-  height: 400px;
   transform: translate(-50%, -50%);
-  z-index: 0;
+  width: 400px; /* Same as before for layout consistency */
+  height: 400px;
 }
 
 .shape {
   position: absolute;
-  opacity: 0.9;
+  opacity: 0.8;
+  background-color: var(--olive-light);
 }
 
-/* Triangle → Bigger, distinct left */
 .triangle {
+  background: none; /* 👈 this fixes the square issue */
   width: 0;
   height: 0;
   border-left: 60px solid transparent;
   border-right: 60px solid transparent;
-  border-bottom: 120px solid #FF8AE2;
+  border-bottom: 120px solid var(--olive-light);
 }
 
-/* Circle → Right, above */
 .circle {
   width: 70px;
   height: 70px;
-  background-color: #8AA7FF;
   border-radius: 50%;
 }
 
-/* Rectangle → Right, below */
 .rectangle {
   width: 100px;
   height: 50px;
-  background-color: #FFD580;
 }
