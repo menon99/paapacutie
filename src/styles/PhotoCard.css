@@ -26,3 +26,9 @@
   font-family: var(--font-sans, 'Poppins', sans-serif);
   text-align: center;
 }
+
+@media (max-width: 768px) {
+  .photo-caption{
+    font-size: 2rem;
+  }
+}
