@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ShapesContainer from "./ShapesContainer";
+import StarsBackground from "./StarsBackground";
 import "../styles/AnimatedBackground.css"; 
 
 const AnimatedBackground = () => {
@@ -10,8 +10,7 @@ const AnimatedBackground = () => {
 
   return (
     <div className="animated-background">
-      <ShapesContainer currentSlide={slide} />
-      
+      <StarsBackground currentSlide={slide} />
       <div className="controls">
         <button onClick={handlePrev}>⬅ Previous</button>
         <button onClick={handleNext}>Next ➡</button>

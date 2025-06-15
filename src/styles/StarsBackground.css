@@ -1,0 +1,19 @@
+.stars-layer {
+  position: absolute;
+  inset: 0;
+  z-index: -1;          /* Behind shapes-layer */
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  background-color: #ffffff;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50%      { opacity: 1; }
+}

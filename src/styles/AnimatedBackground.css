@@ -2,7 +2,7 @@
   position: relative;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, #0a0a0a, #1b1b1b);
+  z-index: 1;
   overflow: hidden;
 }
 
@@ -17,7 +17,6 @@
 
 .controls button {
   padding: 0.5rem 1rem;
-  background: rgba(255, 255, 255, 0.1);
   color: #fff;
   border: 1px solid #fff;
   border-radius: 5px;
