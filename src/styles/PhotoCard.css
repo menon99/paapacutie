@@ -23,5 +23,6 @@
   backdrop-filter: blur(6px);
   color: #fff;
   font-size: 1.1rem;
+  font-family: var(--font-sans, 'Poppins', sans-serif);
   text-align: center;
 }
